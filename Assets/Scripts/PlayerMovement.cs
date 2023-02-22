@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-  public float moveSpeed;
+    public float moveSpeed;
 
     public Transform orientation;
 
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
-    private void Start();
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation =true;
