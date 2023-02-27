@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 119502258}
   - component: {fileID: 119502257}
   - component: {fileID: 119502261}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1858,7 +1858,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be51aba029252945947d7518e381293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 3
+  groundDrag: 7
+  playerHeight: 2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
   orientation: {fileID: 299169768}
 --- !u!1 &833674089
 GameObject:
@@ -2298,7 +2303,7 @@ GameObject:
   - component: {fileID: 1073362061}
   - component: {fileID: 1073362060}
   - component: {fileID: 1073362059}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StartingSpaceGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
