@@ -81,7 +81,7 @@ public class Player_Movement : MonoBehaviour
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f,ForceMode.Impulse);
-           
+        
 
         }
 
@@ -108,6 +108,7 @@ public class Player_Movement : MonoBehaviour
 
     }
     
+    //bug- crouchSpeed not working
     private void StateHandler()
     {
 
