@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2990966704704696771}
   - component: {fileID: 8591442806452089848}
   - component: {fileID: 7638442691487169620}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Flight_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,10 @@ Animation:
   m_GameObject: {fileID: 7708799633350051374}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 1827226128182048838, guid: 6c34cf1f0553e4d4688bf6b40739479a, type: 3}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 1827226128182048838, guid: 6c34cf1f0553e4d4688bf6b40739479a, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
