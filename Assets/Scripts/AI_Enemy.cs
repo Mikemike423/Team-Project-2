@@ -10,13 +10,15 @@ public class AI_Enemy : MonoBehaviour
 
    public GameObject Start;
 
-   public bool hidden;
+   //bool to store if player is hiding
+   public bool hidden = false;
+
+   //bool for if player has left starting area
+   public bool playerLeftStart = false;
   
    private void Update()
    {
-
-      chasePlayer();
-     
+      if(playerLeftStart && !hidden) chasePlayer(); 
    }
   
    private void chasePlayer()
@@ -25,6 +27,5 @@ public class AI_Enemy : MonoBehaviour
 
     transform.LookAt(Player);
    }
- 
-  
+   
 }
