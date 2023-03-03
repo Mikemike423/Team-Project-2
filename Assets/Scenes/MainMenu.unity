@@ -2078,7 +2078,7 @@ GameObject:
   - component: {fileID: 1810504167}
   - component: {fileID: 1810504166}
   m_Layer: 5
-  m_Name: SilentStudies
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2542,7 +2542,7 @@ GameObject:
   - component: {fileID: 1947903245}
   - component: {fileID: 1947903244}
   m_Layer: 5
-  m_Name: SilentStudies
+  m_Name: About
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
