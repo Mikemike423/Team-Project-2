@@ -6088,7 +6088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730827f70a91ec74b8dc78decce40d27, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999928
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730827f70a91ec74b8dc78decce40d27, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6096,7 +6096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730827f70a91ec74b8dc78decce40d27, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.00379796
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730827f70a91ec74b8dc78decce40d27, type: 3}
       propertyPath: m_LocalRotation.z
@@ -6108,7 +6108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730827f70a91ec74b8dc78decce40d27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -0.435
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730827f70a91ec74b8dc78decce40d27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -6591,7 +6591,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.024198433
-  m_BaseOffset: 3
+  m_BaseOffset: 0.08
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &1432101188
@@ -6602,12 +6602,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432101181}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.033005953
-  m_Height: 0.100579225
+  m_Height: 0.066011906
   m_Direction: 1
-  m_Center: {x: 0, y: -0.017321065, z: 0}
+  m_Center: {x: 0, y: -0.00003734149, z: 0}
 --- !u!54 &1432101189
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8894,11 +8894,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2ffc2e4cd8431434ea311f4a7f985e48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.78
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2ffc2e4cd8431434ea311f4a7f985e48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.572
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2ffc2e4cd8431434ea311f4a7f985e48, type: 3}
       propertyPath: m_LocalPosition.z

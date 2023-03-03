@@ -12,27 +12,19 @@ public class AI_Enemy : MonoBehaviour
 
    public bool hidden;
   
-  
-
-
-
    private void Update()
    {
-   
-     chasePlayer();
- 
-   
+
+      chasePlayer();
      
    }
   
- 
-
-
    private void chasePlayer()
    {
     enemy.SetDestination(Player.position);
 
     transform.LookAt(Player);
    }
+ 
   
 }
