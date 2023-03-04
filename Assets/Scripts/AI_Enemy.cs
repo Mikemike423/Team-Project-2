@@ -36,12 +36,12 @@ public class AI_Enemy : MonoBehaviour
   
    private void chasePlayer()
    {
-      //Reset search by setting reached serach point to true
+      //Reset search by setting reached search point to true
       hasReachedSearchPoint = true;
       //Set destination and 
       enemy.SetDestination(Player.position);
       transform.LookAt(Player);
-        transform.Rotate(0f, 90f, 0f, Space.Self);
+      transform.Rotate(0f, 90f, 0f, Space.Self);
     }
 
    //Function to handle enenmy randomly searching while player is hiding
@@ -55,6 +55,7 @@ public class AI_Enemy : MonoBehaviour
       else {
          enemy.SetDestination(searchPoint[curPointIndex].transform.position);
          transform.LookAt(searchPoint[curPointIndex].transform);
+         transform.Rotate(0f, 90f, 0f, Space.Self);
       }
    }
 
