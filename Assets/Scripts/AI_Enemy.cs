@@ -41,6 +41,7 @@ public class AI_Enemy : MonoBehaviour
       //Set destination and 
       enemy.SetDestination(Player.position);
       transform.LookAt(Player);
+      transform.Rotate(0f, 90f, 0f, Space.Self);
    }
 
    //Function to handle enenmy randomly searching while player is hiding
