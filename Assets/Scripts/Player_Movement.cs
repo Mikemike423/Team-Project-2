@@ -37,6 +37,10 @@ public class Player_Movement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+
+ 
+
+ 
     
     public MovementState state;
     public enum MovementState
@@ -152,5 +156,17 @@ public class Player_Movement : MonoBehaviour
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
        }
    }
+
+
+
+
+
+
+
+  
+
+  
+    
+
 
 }
