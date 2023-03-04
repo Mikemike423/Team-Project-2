@@ -10,11 +10,16 @@ public class AI_Enemy : MonoBehaviour
 
    public GameObject Start;
 
+   [Header("Player States")]
+
    //bool to store if player is hiding
-   public bool isHiding = false;
+   public bool playerHiding = false;
 
    //bool for if player has left starting area
    public bool playerLeftStart = false;
+
+   //bool to store if player is running
+   public bool playerRunning = false;
 
    [Header("Search Veriables")]
    //Array of serach points
@@ -30,15 +35,15 @@ public class AI_Enemy : MonoBehaviour
       //if player has left start
       //if player is hidding move toward player
       //if player is hiding move to random search point
-      if(playerLeftStart && !isHiding) chasePlayer();
-      if(playerLeftStart && isHiding) Search();  
+      if(playerLeftStart && !playerHiding) chasePlayer();
+      if(playerLeftStart && playerHiding) Search();  
    }
   
    private void chasePlayer()
    {
       //Reset search by setting reached search point to true
       hasReachedSearchPoint = true;
-      //Set destination and 
+      //Set destination and look at player
       enemy.SetDestination(Player.position);
       transform.LookAt(Player);
       transform.Rotate(0f, 90f, 0f, Space.Self);
@@ -71,6 +76,18 @@ public class AI_Enemy : MonoBehaviour
          //Set bool for seraching
          hasReachedSearchPoint = false;
       }
+   }
+
+   //Called by player to cause enemy to chase faster when player is running if player is not crouching
+   public void setChaseSpeed(bool isRunning) {
+      if (!playerHiding) {
+         playerRunning = isRunning;
+         if(playerRunning) {
+            this.GetComponent<NavMeshAgent>().speed = 30f;
+         }
+         else this.GetComponent<NavMeshAgent>().speed = 3.5f;
+      }
+      else this.GetComponent<NavMeshAgent>().speed = 3.5f;
    }
 
    void OnTriggerEnter(Collider col) {

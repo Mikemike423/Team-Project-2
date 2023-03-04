@@ -10400,6 +10400,7 @@ MonoBehaviour:
   Start: {fileID: 1072330254}
   isHiding: 0
   playerLeftStart: 0
+  playerRunning: 0
   searchPoint:
   - {fileID: 857827771}
   - {fileID: 1002031792}
@@ -10417,7 +10418,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 5
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 360
   m_StoppingDistance: 0
