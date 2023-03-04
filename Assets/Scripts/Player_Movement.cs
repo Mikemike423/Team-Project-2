@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
+    [Header("Object storage")]
+    //Stores enemy script game object
+    public AI_Enemy enemy;
+
     [Header("Movement")]
     private float moveSpeed;
     public float sprintSpeed;
@@ -17,6 +21,8 @@ public class Player_Movement : MonoBehaviour
     public float crouchSpeed;
     public float crouchYScale;
     private float startYScale;
+    //Keeps track of weather charecter is crouching
+    private bool isCrouching;
 
 
 
@@ -53,8 +59,7 @@ public class Player_Movement : MonoBehaviour
         rb.freezeRotation = true ;
 
         startYScale = transform.localScale.y;
-    
-        
+
     }
 
     private void Update()
@@ -81,15 +86,16 @@ public class Player_Movement : MonoBehaviour
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f,ForceMode.Impulse);
-        
-
+            //Update booleen on enemy to inform player is hidding
+            enemy.isHiding = true;
         }
 
         //stop crouch
         if(Input.GetKeyUp(crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-            
+            //Update booleen on enemy to inform player is hidding
+            enemy.isHiding = false;
         }
 
     }

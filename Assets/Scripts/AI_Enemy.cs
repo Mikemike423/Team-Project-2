@@ -11,21 +11,72 @@ public class AI_Enemy : MonoBehaviour
    public GameObject Start;
 
    //bool to store if player is hiding
-   public bool hidden = false;
+   public bool isHiding = false;
 
    //bool for if player has left starting area
    public bool playerLeftStart = false;
+
+   [Header("Search Veriables")]
+   //Array of serach points
+   public GameObject[] searchPoint;
+   //bool to keep track of if enenmy has reached a serach point
+   bool hasReachedSearchPoint = true;
+   //stores current serach point index
+   int curPointIndex = 0;
+
   
    private void Update()
    {
-      if(playerLeftStart && !hidden) chasePlayer(); 
+      //if player has left start
+      //if player is hidding move toward player
+      //if player is hiding move to random search point
+      if(playerLeftStart && !isHiding) chasePlayer();
+      if(playerLeftStart && isHiding) Search();  
    }
   
    private void chasePlayer()
    {
-    enemy.SetDestination(Player.position);
-
-    transform.LookAt(Player);
+      //Reset search by setting reached serach point to true
+      hasReachedSearchPoint = true;
+      //Set destination and 
+      enemy.SetDestination(Player.position);
+      transform.LookAt(Player);
    }
-   
+
+   //Function to handle enenmy randomly searching while player is hiding
+   private void Search() {
+      Debug.Log("Serching for point: " + curPointIndex);
+      //If not currently on way to search point generate random search point
+      if(hasReachedSearchPoint) {
+         GenerateDistinctSearchPoint();
+      }
+      //Set destination and sets enemy to look at position
+      else {
+         enemy.SetDestination(searchPoint[curPointIndex].transform.position);
+         transform.LookAt(searchPoint[curPointIndex].transform);
+      }
+   }
+
+   //Generates disctinct serach point
+   private void GenerateDistinctSearchPoint(){
+      //Generate index number and temporarily store it 
+      int temp = Random.Range(0,5);
+      //If num generated is the same as current index re run function
+      if(temp == curPointIndex) GenerateDistinctSearchPoint();
+      else {
+         //set current seach point index to temp
+         curPointIndex = temp;
+         //Set bool for seraching
+         hasReachedSearchPoint = false;
+      }
+   }
+
+   void OnTriggerEnter(Collider col) {
+      //If collided with serach point check if point is current point
+      if (col.gameObject == searchPoint[curPointIndex]) {
+         Debug.Log("Reched Point");
+         hasReachedSearchPoint = true;
+      }
+   }
+
 }
