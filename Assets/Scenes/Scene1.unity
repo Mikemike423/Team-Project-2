@@ -17372,19 +17372,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Silent Studies is a game about stealth. You must find your way through
-    this maze of a library to find your book and escape without being caught.
-
-
-    Hold
-    space to crouch, which makes you quieter but slower.
-
-
-    Hold shift to sprint
-    which makes you louder but faster.
-
-
-    Press esc or p to unpause.'
+  m_text: "Silent Studies is a game about stealth. You must find your way through
+    this maze of a library to find your book and escape without being caught. The
+    enemy is blind and can only through sound. \n\nCrouch: Space | Sprint: Shift
+    | Interact: E | Pause: P"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
