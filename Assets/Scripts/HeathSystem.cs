@@ -1,28 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class HeathSystem : MonoBehaviour
 {
     public Transform Player;
     public Transform respawnPoint;
-    
+
     public int lives;
-    //public AudioSource deathSound;
-
-
-    private void Awake()
-    {
-        // deathSound = deathSound.GetComponent<AudioSource>();
-         lives = 3;
-    }
-
-
+    
+   
   
   void OnTriggerEnter(Collider other)
    {
+    
+      if (other.gameObject.CompareTag("Player"))
+      {
+         Death();
+      }
  
-    Death();
+  
     
    
    }
@@ -30,8 +29,8 @@ public class HeathSystem : MonoBehaviour
    private void Death()
    {
 
-      lives = lives -1;
-     // deathSound.Play();
+
+     
       Invoke(nameof(playerRespawn), 1f);
    }
 
@@ -39,5 +38,6 @@ public class HeathSystem : MonoBehaviour
    {
     Player.transform.position = respawnPoint.transform.position;
    }
+
    
 }
