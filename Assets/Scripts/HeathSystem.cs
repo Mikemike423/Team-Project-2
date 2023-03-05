@@ -9,6 +9,8 @@ public class HeathSystem : MonoBehaviour
     public Transform respawnPoint;
 
     public int lives;
+
+    public ParticleSystem respawnParticle;
     
    
   
@@ -36,6 +38,11 @@ public class HeathSystem : MonoBehaviour
    {
         Player.transform.position = respawnPoint.transform.position;
         lives = lives -1;
+        
+        if (lives != 9)
+        {
+            respawnParticle.Play();
+        }
    }
 
    
