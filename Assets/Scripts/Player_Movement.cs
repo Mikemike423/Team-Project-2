@@ -87,7 +87,7 @@ public class Player_Movement : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f,ForceMode.Impulse);
             //Update booleen on enemy to inform player is hidding
-            enemy.isHiding = true;
+            enemy.playerHiding = true;
         }
 
         //stop crouch
@@ -95,7 +95,7 @@ public class Player_Movement : MonoBehaviour
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
             //Update booleen on enemy to inform player is hidding
-            enemy.isHiding = false;
+            enemy.playerHiding = false;
         }
 
     }
@@ -129,12 +129,16 @@ public class Player_Movement : MonoBehaviour
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
+            //Set chase speed of enemy 
+            enemy.setChaseSpeed(true);
         }
           //mode - walking
         else if(grounded)
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
+            //Set chase speed of enemy 
+            enemy.setChaseSpeed(false);
         }
 
 
