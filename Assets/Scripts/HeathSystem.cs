@@ -30,7 +30,7 @@ public class HeathSystem : MonoBehaviour
    {
 
 
-     
+     lives = lives -1;
       Invoke(nameof(playerRespawn), 1f);
    }
 

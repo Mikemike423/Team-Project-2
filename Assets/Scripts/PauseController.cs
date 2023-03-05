@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseController : MonoBehaviour
 {
@@ -11,15 +12,22 @@ public class PauseController : MonoBehaviour
     public GameObject loseMenuUI;
     public GameObject winMenuUI;
 
+    public TextMeshProUGUI livesText;
+    private HeathSystem health;
+    public GameObject Enemy;
+
     // Start is called before the first frame update
     void Start()
     {
         Resume();
+        health = Enemy.GetComponent<HeathSystem>();
+        CurrentLives();
     }
 
     // Update is called once per frame
     void Update()
     {
+        CurrentLives();
         //pause or unpause with keyboard key
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
@@ -36,6 +44,10 @@ public class PauseController : MonoBehaviour
         if (Data.hasBook == true)
         {
             Win();
+        }
+        if(health.lives <=0)
+        {
+          Invoke(nameof(Lose), 0.9f);
         }
     }
 
@@ -86,5 +98,9 @@ public class PauseController : MonoBehaviour
     {
         Debug.Log("QUIT");
         Application.Quit();
+    }
+    void CurrentLives()
+    {
+        livesText.text = "Lives: " + health.lives;
     }
 }
