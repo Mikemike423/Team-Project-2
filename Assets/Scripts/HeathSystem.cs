@@ -31,12 +31,13 @@ public class HeathSystem : MonoBehaviour
 
 
      
-      Invoke(nameof(playerRespawn), 1f);
+      Invoke(nameof(playerRespawn), 0.5f);
    }
 
    private void playerRespawn()
    {
-    Player.transform.position = respawnPoint.transform.position;
+        Player.transform.position = respawnPoint.transform.position;
+        lives -= 1;
    }
 
    

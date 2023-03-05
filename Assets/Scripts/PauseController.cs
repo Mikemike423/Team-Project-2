@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseController : MonoBehaviour
 {
@@ -11,9 +12,15 @@ public class PauseController : MonoBehaviour
     public GameObject loseMenuUI;
     public GameObject winMenuUI;
 
+    public GameObject healthScriptHolder;
+    private HeathSystem healthScript;
+
+    public TextMeshProUGUI lives;
+
     // Start is called before the first frame update
     void Start()
     {
+        healthScript = healthScriptHolder.GetComponent<HeathSystem>();
         Resume();
     }
 
@@ -37,6 +44,13 @@ public class PauseController : MonoBehaviour
         {
             Win();
         }
+
+        if (healthScript.lives <= 0)
+        {
+            Lose();
+        }
+
+        lives.text = "Lives: " + healthScript.lives;
     }
 
     void Pause()
