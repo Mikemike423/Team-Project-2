@@ -912,7 +912,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1988625698}
         m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: Menu
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3293,8 +3293,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.021205049, y: 0.010000003, z: 0.023360467}
-  m_Center: {x: 0.000000019124704, y: -0.000000005384435, z: 0.006680184}
+  m_Size: {x: 0.03828067, y: 0.010000003, z: 0.034875147}
+  m_Center: {x: 0.00000001876386, y: -0.000000005384435, z: 0.012437525}
 --- !u!4 &468810941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8aac592e1e0be0445b12c7c0f078c274, type: 3}
@@ -3315,7 +3315,7 @@ MonoBehaviour:
   direction: {x: 1, y: 0, z: 0}
   pivotPoint: {fileID: 1753852131}
   rotateSpeed: 50
-  rotateTime: 3
+  rotateTime: 0.4
 --- !u!1001 &482919257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4542,7 +4542,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1988625698}
         m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8697,7 +8697,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1988625698}
         m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: Menu
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11962,7 +11962,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1988625698}
         m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13341,6 +13341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1674734591}
+  loseMenuUI: {fileID: 581246120}
+  winMenuUI: {fileID: 1985179933}
 --- !u!114 &1988625699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13725,7 +13727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5847929891346577106, guid: 61c65e30b65f6c047b19165e1635f558, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.15
+      value: 16.7
       objectReference: {fileID: 0}
     - target: {fileID: 5847929891346577106, guid: 61c65e30b65f6c047b19165e1635f558, type: 3}
       propertyPath: m_LocalRotation.w
