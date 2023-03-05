@@ -102,7 +102,10 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if(!Input.GetKey(crouchKey))
+        {
+            MovePlayer();
+        }
     }
 
 
