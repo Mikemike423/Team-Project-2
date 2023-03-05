@@ -36,7 +36,8 @@ public class HeathSystem : MonoBehaviour
 
    private void playerRespawn()
    {
-    Player.transform.position = respawnPoint.transform.position;
+        Player.transform.position = respawnPoint.transform.position;
+        lives -= 1;
    }
 
    

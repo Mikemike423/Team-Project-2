@@ -6,4 +6,5 @@ public static class Data
 {
     public static bool hasBook { get; set; }
     public static bool leverIsPulled { get; set; }
+    public static int numberOfLives { get; set; }
 }

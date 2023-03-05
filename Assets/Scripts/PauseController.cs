@@ -19,6 +19,7 @@ public class PauseController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthScript = healthScriptHolder.GetComponent<HeathSystem>();
         Resume();
         health = Enemy.GetComponent<HeathSystem>();
         CurrentLives();
