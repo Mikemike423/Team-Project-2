@@ -8,8 +8,6 @@ public class PauseController : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
-    public GameObject loseMenuUI;
-    public GameObject winMenuUI;
 
     // Start is called before the first frame update
     void Start()
@@ -27,15 +25,10 @@ public class PauseController : MonoBehaviour
             {
                 Resume();
             }
-            else if (Time.timeScale != 0f)
+            else
             {
                 Pause();
             }
-        }
-
-        if (Data.hasBook == true)
-        {
-            Win();
         }
     }
 
@@ -57,24 +50,6 @@ public class PauseController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    public void Win()
-    {
-        winMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void Lose()
-    {
-        loseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Menu()

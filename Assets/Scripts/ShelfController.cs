@@ -13,10 +13,16 @@ public class ShelfController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Data.leverIsPulled == true && elapsedTime < slideTime)
+        if (Data.hasBook == true && elapsedTime < slideTime)
         {
             transform.Translate(direction * slideSpeed * Time.deltaTime);
             elapsedTime += Time.deltaTime;
         }
+        else
+        {
+            Data.hasBook = false;
+            elapsedTime = 0f;
+        }
+
     }
 }
