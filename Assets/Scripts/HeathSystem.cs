@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using TMPro;
+
 
 public class HeathSystem : MonoBehaviour
 {
@@ -29,15 +28,14 @@ public class HeathSystem : MonoBehaviour
    private void Death()
    {
 
-
-     lives = lives -1;
-      Invoke(nameof(playerRespawn), 1f);
+      
+      Invoke(nameof(playerRespawn), 0.7f);
    }
 
    private void playerRespawn()
    {
         Player.transform.position = respawnPoint.transform.position;
-        lives -= 1;
+        lives = lives -1;
    }
 
    
