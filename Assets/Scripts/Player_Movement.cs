@@ -36,7 +36,7 @@ public class Player_Movement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
 
-
+    public ParticleSystem hiddenParticle;
 
 
     public Transform orientation;
@@ -104,6 +104,7 @@ public class Player_Movement : MonoBehaviour
             rb.AddForce(Vector3.down * 5f,ForceMode.Impulse);
             //Update booleen on enemy to inform player is hidding
             enemy.playerHiding = true;
+            hiddenParticle.Play();
         }
 
         //stop crouch
@@ -112,6 +113,7 @@ public class Player_Movement : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
             //Update booleen on enemy to inform player is hidding
             enemy.playerHiding = false;
+            hiddenParticle.Stop();
         }
  
 
