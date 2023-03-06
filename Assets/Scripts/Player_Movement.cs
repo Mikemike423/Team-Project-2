@@ -30,10 +30,14 @@ public class Player_Movement : MonoBehaviour
     public KeyCode crouchKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
     
+    
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
+
+
+
 
     public Transform orientation;
 
@@ -43,6 +47,14 @@ public class Player_Movement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+
+
+   
+    
+
+
+
+   
     
     public MovementState state;
     public enum MovementState
@@ -60,6 +72,10 @@ public class Player_Movement : MonoBehaviour
 
         startYScale = transform.localScale.y;
 
+      
+
+      
+        
     }
 
     private void Update()
@@ -97,6 +113,7 @@ public class Player_Movement : MonoBehaviour
             //Update booleen on enemy to inform player is hidding
             enemy.playerHiding = false;
         }
+ 
 
     }
 
@@ -116,6 +133,7 @@ public class Player_Movement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
     }
+ 
     
     //bug- crouchSpeed not working
     private void StateHandler()
@@ -134,6 +152,8 @@ public class Player_Movement : MonoBehaviour
             moveSpeed = sprintSpeed;
             //Set chase speed of enemy 
             enemy.setChaseSpeed(true);
+
+             
         }
           //mode - walking
         else if(grounded)
@@ -149,6 +169,8 @@ public class Player_Movement : MonoBehaviour
 
     private void MovePlayer()
    {
+      
+
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
@@ -165,5 +187,7 @@ public class Player_Movement : MonoBehaviour
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
        }
    }
+
+
 
 }
