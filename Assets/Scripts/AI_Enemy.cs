@@ -76,6 +76,7 @@ public class AI_Enemy : MonoBehaviour
       if (col.gameObject == searchPoint[curPointIndex]) {
          Debug.Log("Reched Point");
          hasReachedSearchPoint = true;
+         
       }
    }
 
