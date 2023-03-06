@@ -11,15 +11,6 @@ public class HeathSystem : MonoBehaviour
     public int lives;
 
     public ParticleSystem respawnParticle;
-
-   AudioSource sound;
-   public AudioSource deathSound;
-
-   private void start()
-   {
-      sound = GetComponent<AudioSource>();
-      deathSound = deathSound.GetComponent<AudioSource>();
-   }
     
    
   
@@ -41,7 +32,6 @@ public class HeathSystem : MonoBehaviour
 
       
       Invoke(nameof(playerRespawn), 0.7f);
-       deathSound.Play();
    }
 
    private void playerRespawn()

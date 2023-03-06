@@ -15,16 +15,11 @@ public class LeverController : MonoBehaviour
 
      public TextMeshProUGUI interactText;
 
-    AudioSource sound;
-    public AudioSource openSound;
-
     // Start is called before the first frame update
     void Start()
     {
         Data.leverIsPulled = false;
         interactText.text = " ";
-        sound = GetComponent<AudioSource>();
-        openSound = openSound.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,7 +37,6 @@ public class LeverController : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             Data.leverIsPulled = true;
-            openSound.Play();
         }
         
     
